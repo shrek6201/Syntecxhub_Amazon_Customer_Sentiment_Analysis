@@ -102,7 +102,7 @@ Accuracy barely moved while macro F1 rose from 0.48 to 0.66, which is why accura
 ## Repository Structure
 
 ```
-Syntecxhub_Amazon_Sentiment_Analysis/
+Syntecxhub_Amazon_Customer_Sentiment_Analysis/
 ├── reviews_common.py
 ├── train_classifier.py
 ├── final_labels.py
