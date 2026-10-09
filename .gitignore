@@ -1,0 +1,5 @@
+venv/
+data/Reviews.csv
+data/database.sqlite
+data/vader_scores.csv
+data/review_sentiment.csv

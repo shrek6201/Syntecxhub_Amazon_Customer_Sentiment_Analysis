@@ -1,0 +1,76 @@
+Class,Rank,Term,Coef
+Negative,1,worst,7.946
+Negative,2,not recommend,7.039
+Negative,3,terrible,6.845
+Negative,4,disappointing,6.348
+Negative,5,awful,6.253
+Negative,6,disappointed,6.101
+Negative,7,not worth,6.092
+Negative,8,yuck,5.811
+Negative,9,horrible,5.492
+Negative,10,never buy,5.306
+Negative,11,disappointment,5.269
+Negative,12,not good,5.199
+Negative,13,threw,5.125
+Negative,14,disgusting,4.922
+Negative,15,not happy,4.804
+Negative,16,nasty,4.797
+Negative,17,not,4.501
+Negative,18,gross,4.462
+Negative,19,tasteless,4.449
+Negative,20,don't recommend,4.401
+Negative,21,waste money,4.398
+Negative,22,not buy,4.361
+Negative,23,stale,4.226
+Negative,24,unpleasant,4.197
+Negative,25,definitely not,4.172
+Neutral,1,ok,5.33
+Neutral,2,not bad,4.586
+Neutral,3,okay,4.498
+Neutral,4,don't wrong,3.897
+Neutral,5,stars,3.843
+Neutral,6,decent,3.693
+Neutral,7,not best,3.595
+Neutral,8,not terrible,3.519
+Neutral,9,not worst,3.285
+Neutral,10,not favorite,3.184
+Neutral,11,lacks,3.135
+Neutral,12,unfortunately,3.124
+Neutral,13,not worth,3.082
+Neutral,14,average,2.937
+Neutral,15,prefer,2.933
+Neutral,16,overall,2.874
+Neutral,17,nothing special,2.855
+Neutral,18,alright,2.754
+Neutral,19,never did,2.686
+Neutral,20,adequate,2.668
+Neutral,21,little disappointed,2.647
+Neutral,22,won't buy,2.647
+Neutral,23,good,2.621
+Neutral,24,nothing wrong,2.582
+Neutral,25,wouldn't buy,2.571
+Positive,1,not disappointed,9.486
+Positive,2,great,8.621
+Positive,3,best,8.585
+Positive,4,delicious,8.578
+Positive,5,perfect,7.166
+Positive,6,excellent,6.968
+Positive,7,won't disappointed,6.838
+Positive,8,loves,6.429
+Positive,9,hooked,6.244
+Positive,10,just right,6.112
+Positive,11,happy,5.988
+Positive,12,wonderful,5.955
+Positive,13,love,5.878
+Positive,14,not bitter,5.555
+Positive,15,pleased,5.534
+Positive,16,amazing,5.518
+Positive,17,yum,5.321
+Positive,18,highly recommend,5.258
+Positive,19,skeptical,5.254
+Positive,20,favorite,5.109
+Positive,21,yummy,4.891
+Positive,22,highly,4.757
+Positive,23,awesome,4.631
+Positive,24,good,4.581
+Positive,25,addicted,4.484
