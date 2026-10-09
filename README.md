@@ -104,7 +104,6 @@ Accuracy barely moved while macro F1 rose from 0.48 to 0.66, which is why accura
 ```
 Syntecxhub_Amazon_Sentiment_Analysis/
 ├── reviews_common.py
-├── score_sentiment.py
 ├── train_classifier.py
 ├── final_labels.py
 ├── sentiment_analysis.py
