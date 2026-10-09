@@ -1,12 +1,12 @@
 # Amazon Customer Sentiment Analysis
 
-Week 4 project for the **Syntecxhub Data Analysis Internship**. Sentiment analysis of ~394K Amazon food reviews: a lexicon baseline (VADER) is validated against star ratings, compared with a trained text classifier (TF-IDF + logistic regression), and then used to study sentiment trends, complaint themes, and review helpfulness.
+Week 4 project for the **Syntecxhub Data Analysis Internship**. Sentiment analysis of ~394K Amazon food reviews: a lexicon baseline (VADER) is validated against star ratings, compared with a trained text classifier (TF-IDF + logistic regression), and then used to study sentiment trends, complaint themes and review helpfulness.
 
 ![Model comparison](charts/06_model_comparison.png)
 
 ## Objective
 
-Clean and preprocess Amazon review text, classify each review as positive, negative, or neutral, identify patterns in customer feedback and ratings, visualize sentiment distribution and trends, and turn the findings into insights for product improvement and customer satisfaction.
+Clean and preprocess Amazon review text, classify each review as positive, negative or neutral, identify patterns in customer feedback and ratings, visualize sentiment distribution and trends, and turn the findings into insights for product improvement and customer satisfaction.
 
 ## Dataset
 
@@ -22,7 +22,7 @@ Clean and preprocess Amazon review text, classify each review as positive, negat
 
 ## Data Cleaning
 
-- **Removed 174,523 rows**: 174,521 duplicate reviews (the same user, time, and text attached to several product variants, which would otherwise inflate every count) and 2 rows with impossible helpfulness values (helpful votes greater than total votes).
+- **Removed 174,523 rows**: 174,521 duplicate reviews (the same user, time and text attached to several product variants, which would otherwise inflate every count) and 2 rows with impossible helpfulness values (helpful votes greater than total votes).
 - **Stripped HTML tags** (present in 103,109 of the remaining reviews, 26%) and **URLs** (8,115 reviews).
 - **Filled 27 missing summaries** with empty strings; converted Unix timestamps to dates.
 - **Deliberately kept case and punctuation** for VADER, since capitalization and exclamation marks carry intensity. Stopwords were removed only for the TF-IDF model, **with negation words kept** ("not good" must not collapse into "good").
@@ -30,7 +30,7 @@ Clean and preprocess Amazon review text, classify each review as positive, negat
 ## Methodology
 
 1. **Reference labels from star ratings:** 1-2 stars = Negative, 3 = Neutral, 4-5 = Positive (14.5% / 7.6% / 77.9% of reviews).
-2. **Baseline: VADER** compound score on the review text, with the standard +/-0.05 cutoffs.
+2. **Baseline: VADER** compound score on the review text, with the standard +/-0.05 cut-offs.
 3. **Trained model: TF-IDF (unigrams + bigrams, 100K features) + multinomial logistic regression** with balanced class weights, evaluated on a stratified 80/20 held-out split.
 4. **Evaluation by per-class precision, recall and F1, and macro F1, not accuracy.** The classes are imbalanced: labelling every review "Positive" would already score 77.9% accuracy.
 5. **Out-of-fold labelling:** every review was labelled by 3-fold cross-validation, so no review is scored by a model that trained on it. The out-of-fold macro F1 (0.66) matches the held-out result.
@@ -76,10 +76,10 @@ Accuracy barely moved while macro F1 rose from 0.48 to 0.66, which is why accura
 
 ### Recommendations for product improvement
 
-- **Tighten freshness controls:** stock rotation, expiry-date checks before dispatch, and best-before dates on listings address the most negative-specific theme.
+- **Tighten freshness controls:** stock rotation, expiry-date checks before dispatch and best-before dates on listings address the most negative-specific theme.
 - **Improve listing accuracy:** claims such as "organic" or "raw", and certifications such as halal, drive "not as described" complaints.
 - **Review packaging and shipping-cost transparency:** reviews describe boxes arriving open, and in one case shipping costing more than the product.
-- **Escalate health and safety mentions** (for example, pets becoming ill), which are rare but severe.
+- **Escalate health and safety mentions** (for example pets becoming ill), which are rare but severe.
 
 ## Limitations
 
@@ -87,7 +87,7 @@ Accuracy barely moved while macro F1 rose from 0.48 to 0.66, which is why accura
 - **The model is bag-of-words.** It misses reviews that start positive and then turn ("I was a big fan... until my cat became sick") and can pick up negative words used off-target. In a manual read of 16 mismatched reviews, 3 of 8 "4-5 star but negative text" cases were genuine complaints or mixed reviews, and 6 of 8 "1-2 star but positive text" cases were negative reviews the model missed. This is a small sample and indicative only.
 - **Theme counts are keyword mentions, not sentiment**, and the theme list is not exhaustive.
 - The train/test split is random by review, not grouped by user or product.
-- The dataset covers food products only and has product IDs but no names or categories, so insights are at the platform level.
+- The dataset covers food products only and has product IDs but no names or categories, so insights are at platform level.
 
 ## How to reproduce
 
@@ -104,6 +104,7 @@ Accuracy barely moved while macro F1 rose from 0.48 to 0.66, which is why accura
 ```
 Syntecxhub_Amazon_Sentiment_Analysis/
 ├── reviews_common.py
+├── score_sentiment.py
 ├── train_classifier.py
 ├── final_labels.py
 ├── sentiment_analysis.py
